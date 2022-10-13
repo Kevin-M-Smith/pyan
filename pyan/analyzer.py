@@ -749,7 +749,7 @@ class CallGraphVisitor(ast.NodeVisitor):
         if node.value is not None:
             value = sanitize_exprs(node.value)
             self.logger.debug("AnnAssign %s %s, %s:%s" % (get_ast_node_name(target[0]),
-                                                          get_ast_node_name(value[0]),
+                                                          get_ast_node_name(value),
                                                           self.filename, node.lineno))
             self.analyze_binding(target, value)
         else:  # just a type declaration
